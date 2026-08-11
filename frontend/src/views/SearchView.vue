@@ -1,5 +1,5 @@
 <script setup lang="ts">
-// T-15：搜尋頁，關鍵字/標籤/地區篩選 + 列表/地圖切換（見 docs/components.md, docs/design.md）
+// T-15：搜尋頁，關鍵字/標籤/地區篩選 + 列表/地圖切換（見 docs/phase3-components.md, docs/phase3-design.md）
 </script>
 
 <template>

@@ -1,6 +1,7 @@
 # Product Discovery — 找餐廳網站
 
-> SDLC Phase 1 產出文件。依 `product-discovery` skill 的 5 個步驟整理。
+> **SDLC Phase 1 — 需求發想**
+> 依 `product-discovery` skill 的 5 個步驟整理。
 
 ## 1. 原始需求清單
 

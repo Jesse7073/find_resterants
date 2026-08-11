@@ -1,6 +1,6 @@
 # System Architecture — 找餐廳網站
 
-> SDLC Phase 3 步驟 11 產出。
+> **SDLC Phase 3 — 設計**（步驟 11 產出）
 
 ## 架構型態：前後端分離
 
@@ -29,7 +29,7 @@
 | ORM | Spring Data JPA / Hibernate | Spring Boot 標準搭配 |
 | 資料庫版本控管 | Flyway | Spring Boot 生態常見搭配，版本化 migration script |
 | 認證機制 | JWT（Stateless） | 前後端分離架構下的合理選擇；使用者已選定此方案 |
-| 地圖底圖 | Leaflet + OpenStreetMap | 完全免費、開源生態成熟，符合「不使用付費地圖 API」的限制（見 `docs/dependencies-risks.md`） |
+| 地圖底圖 | Leaflet + OpenStreetMap | 完全免費、開源生態成熟，符合「不使用付費地圖 API」的限制（見 `docs/phase2-dependencies-risks.md`） |
 
 ## 後端分層
 
@@ -47,7 +47,7 @@
 
 1. 使用者於 `/api/v1/auth/login` 送出帳密，後端驗證後簽發 JWT
 2. 前端將 JWT 存放於記憶體（Pinia store），並在每次 API 請求的 `Authorization: Bearer <token>` header 帶上
-3. **已知風險**：JWT 存放於前端記憶體/localStorage 皆有 XSS 竊取風險；本版採記憶體存放（重新整理頁面需重新登入或搭配 refresh token），不做 httpOnly cookie 方案，原因是維持前後端完全分離、避免 CORS + cookie 的額外複雜度。此取捨列入 `docs/dependencies-risks.md`
+3. **已知風險**：JWT 存放於前端記憶體/localStorage 皆有 XSS 竊取風險；本版採記憶體存放（重新整理頁面需重新登入或搭配 refresh token），不做 httpOnly cookie 方案，原因是維持前後端完全分離、避免 CORS + cookie 的額外複雜度。此取捨列入 `docs/phase2-dependencies-risks.md`
 4. Token 過期時間、refresh token 機制：本版先用短效 token（如 1 小時）+ 過期後要求重新登入，不做 refresh token（降低複雜度，留待下一輪迭代視使用情況決定是否要加）
 
 ## 影響既有模組
@@ -60,8 +60,8 @@
 
 ## 相關文件
 
-- 資料庫設計：`docs/db-schema.md`
-- API 規格：`docs/api-spec.md`
-- 前端元件規劃：`docs/components.md`
-- 模組劃分：`docs/modules.md`
-- 任務清單/開票：`docs/design.md`
+- 資料庫設計：`docs/phase3-db-schema.md`
+- API 規格：`docs/phase3-api-spec.md`
+- 前端元件規劃：`docs/phase3-components.md`
+- 模組劃分：`docs/phase3-modules.md`
+- 任務清單/開票：`docs/phase3-design.md`

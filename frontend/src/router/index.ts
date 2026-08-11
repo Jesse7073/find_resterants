@@ -14,7 +14,7 @@ const router = createRouter({
   ],
 })
 
-// 對應 docs/components.md「路由與權限」：需登入頁面由此 guard 統一攔截
+// 對應 docs/phase3-components.md「路由與權限」：需登入頁面由此 guard 統一攔截
 router.beforeEach((to) => {
   const authStore = useAuthStore()
   if (to.meta.requiresAuth && !authStore.isLoggedIn) {

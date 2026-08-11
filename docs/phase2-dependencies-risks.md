@@ -1,6 +1,7 @@
 # Dependencies, Risks & Constraints — 找餐廳網站
 
-> SDLC Phase 2 步驟 10 產出。搭配 `docs/requirements-spec.md` 閱讀。專案為全新構想（無既有系統），本清單由 Lead 直接盤點，未派 agent 調查。
+> **SDLC Phase 2 — 需求分析**（步驟 10 產出）
+> 搭配 `docs/phase2-requirements-spec.md` 閱讀。專案為全新構想（無既有系統），本清單由 Lead 直接盤點，未派 agent 調查。
 
 ## 技術依賴
 

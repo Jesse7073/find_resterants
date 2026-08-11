@@ -1,6 +1,7 @@
 # API Spec — 找餐廳網站
 
-> SDLC Phase 3 步驟 13 產出。Base path：`/api/v1`。全新專案，無既有 client，無向下相容疑慮。
+> **SDLC Phase 3 — 設計**（步驟 13 產出）
+> Base path：`/api/v1`。全新專案，無既有 client，無向下相容疑慮。
 
 ## 錯誤處理格式（統一）
 

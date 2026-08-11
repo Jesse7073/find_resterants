@@ -1,16 +1,17 @@
 # Design Document — 找餐廳網站
 
-> SDLC Phase 3 產出文件（步驟 11-17 彙整）。承接 `docs/requirements-spec.md`。
+> **SDLC Phase 3 — 設計**（步驟 11-17 彙整）
+> 承接 `docs/phase2-requirements-spec.md`。
 
 ## 文件索引
 
 | 面向 | 檔案 |
 |---|---|
-| 系統架構 + 技術選型 | `docs/architecture.md` |
-| 資料庫 ER / Schema | `docs/db-schema.md` |
-| API 規格 | `docs/api-spec.md` |
-| 前端元件 + 頁面藍圖 | `docs/components.md` |
-| 模組劃分 | `docs/modules.md` |
+| 系統架構 + 技術選型 | `docs/phase3-architecture.md` |
+| 資料庫 ER / Schema | `docs/phase3-db-schema.md` |
+| API 規格 | `docs/phase3-api-spec.md` |
+| 前端元件 + 頁面藍圖 | `docs/phase3-components.md` |
+| 模組劃分 | `docs/phase3-modules.md` |
 | 任務清單/開票 | 本文件（下方） |
 
 ## 設定/機敏資訊管理
@@ -38,7 +39,7 @@
 | T-07 | `tag` 模組 — 公開標籤 | `V2__seed_public_tags.sql` 建立初始公開標籤種子資料；`/public-tags` 唯讀查詢；套用/移除關聯 API 僅能操作自己套用的關聯；**不提供新增/編輯/刪除標籤本身的 API** | T-03 |
 | T-08 | `note` 模組 | 筆記/評分可 upsert，僅限已收藏的餐廳可建立 | T-05 |
 | T-09 | 全站搜尋/篩選 API | `/restaurants` 支援關鍵字 + 公開標籤 + 地區複合查詢，分頁正確 | T-04, T-07（跨模組票，需兩者皆完成） |
-| T-10 | 統一錯誤處理 | 所有端點錯誤回應符合 `docs/api-spec.md` 定義格式，業務錯誤碼涵蓋文件列出的情境 | T-02~T-09 |
+| T-10 | 統一錯誤處理 | 所有端點錯誤回應符合 `docs/phase3-api-spec.md` 定義格式，業務錯誤碼涵蓋文件列出的情境 | T-02~T-09 |
 
 ### 前端
 
@@ -56,4 +57,4 @@
 
 ## 與需求規格的一致性檢查
 
-對照 `docs/requirements-spec.md` 的 10 項功能與優先排序，上述 19 張票完整覆蓋所有功能，且後端票號 T-02~T-10 對應優先排序 1-10 的資料層/API 依賴順序（如 T-01/T-02 對應優先序 1「註冊/登入」），前端票號 T-12~T-19 對應各頁面所需功能。未發現遺漏或矛盾。
+對照 `docs/phase2-requirements-spec.md` 的 10 項功能與優先排序，上述 19 張票完整覆蓋所有功能，且後端票號 T-02~T-10 對應優先排序 1-10 的資料層/API 依賴順序（如 T-01/T-02 對應優先序 1「註冊/登入」），前端票號 T-12~T-19 對應各頁面所需功能。未發現遺漏或矛盾。

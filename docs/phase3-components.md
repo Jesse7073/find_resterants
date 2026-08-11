@@ -1,6 +1,7 @@
 # Frontend Components — 找餐廳網站
 
-> SDLC Phase 3 步驟 14 產出。Vue 3 + TypeScript + Vite + Pinia + Vue Router。
+> **SDLC Phase 3 — 設計**（步驟 14 產出）
+> Vue 3 + TypeScript + Vite + Pinia + Vue Router。
 
 ## 頁面清單（Views）
 

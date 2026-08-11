@@ -13,7 +13,7 @@ export const useAuthStore = defineStore('auth', {
     isLoggedIn: (state) => !!state.token,
   },
   actions: {
-    // token 僅存於記憶體（Pinia state），重新整理頁面需重新登入，取捨理由見 docs/architecture.md
+    // token 僅存於記憶體（Pinia state），重新整理頁面需重新登入，取捨理由見 docs/phase3-architecture.md
     async login(email: string, password: string) {
       const { data } = await loginApi(email, password)
       this.token = data.token

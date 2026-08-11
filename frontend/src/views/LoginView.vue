@@ -1,5 +1,5 @@
 <script setup lang="ts">
-// T-12：登入表單，串接 authStore.login()（見 docs/design.md）
+// T-12：登入表單，串接 authStore.login()（見 docs/phase3-design.md）
 </script>
 
 <template>

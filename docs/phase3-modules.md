@@ -1,6 +1,6 @@
 # Module Breakdown — 找餐廳網站
 
-> SDLC Phase 3 步驟 15 產出。
+> **SDLC Phase 3 — 設計**（步驟 15 產出）
 
 ## 後端模組（Spring Boot package 劃分）
 
@@ -19,7 +19,7 @@
 
 | 目錄 | 內容 |
 |---|---|
-| `views/` | 頁面元件（見 `docs/components.md`） |
+| `views/` | 頁面元件（見 `docs/phase3-components.md`） |
 | `components/` | 可重用元件 |
 | `stores/` | Pinia store：`authStore`, `favoritesStore`, `tagsStore` |
 | `api/` | API client 封裝，對應後端模組：`authApi`, `restaurantApi`, `favoriteApi`, `tagApi`, `noteApi` |

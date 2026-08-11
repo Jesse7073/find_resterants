@@ -1,6 +1,7 @@
 # Database Schema — 找餐廳網站
 
-> SDLC Phase 3 步驟 12 產出。資料庫：PostgreSQL（單一 datasource，無跨資料庫一致性需求）。
+> **SDLC Phase 3 — 設計**（步驟 12 產出）
+> 資料庫：PostgreSQL（單一 datasource，無跨資料庫一致性需求）。
 
 ## ER 圖
 
@@ -98,7 +99,7 @@ restaurants ──N───M── public_tags  (透過 restaurant_public_tags�
 | rating | SMALLINT | NULLABLE, CHECK (rating BETWEEN 1 AND 5) |
 | updated_at | TIMESTAMP | NOT NULL, default now() |
 
-## 刪除規則（對應 `requirements-spec.md` 4.10）
+## 刪除規則（對應 `docs/phase2-requirements-spec.md` 4.10）
 
 - **`restaurants` 採軟刪除**：刪除餐廳時只更新 `deleted_at`，不做實體刪除，不 CASCADE 移除 `favorites`。其他使用者已收藏的餐廳不受影響、仍會出現在其口袋名單中，但需標示「已下架」狀態（前端依 `deleted_at` 是否為 NULL 判斷）。全站搜尋/瀏覽（`GET /restaurants`）預設排除已下架餐廳。
 - 刪除 `favorites` → CASCADE 刪除 `favorite_tags`、`notes`（此為使用者主動「移除收藏」的正常行為，非餐廳被下架導致，兩者是獨立事件）
