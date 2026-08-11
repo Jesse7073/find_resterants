@@ -18,8 +18,10 @@
 - `application.properties` 已設定資料庫連線與 JWT 密鑰**透過環境變數帶入**（`DB_URL`/`DB_USERNAME`/`DB_PASSWORD`/`JWT_SECRET`），本機開發有預設值但正式環境必須覆蓋，機敏資訊不寫死在檔案或提交進版控
 - **驗證**：`mvn compile` 執行成功（使用 IntelliJ 已下載的 `ms-21.0.8` JDK），2026-08-11 已實測通過
 
-### 已知未驗證項目（留待 Phase 5 開始前處理）
-- **尚未啟動過完整應用程式**：`mvn compile` 只驗證原始碼可編譯，還沒有實際跑 `spring-boot:run` 連線到真正的 PostgreSQL 資料庫做端到端驗證，因為本機目前沒有跑起來的 PostgreSQL 服務。建議在 Phase 5 動工前，先用 Docker 或本機安裝的方式啟動一個 PostgreSQL 實例，跑一次 Flyway migration 確認 schema 正確套用
+### 已知未驗證項目（Phase 5 開工時已處理）
+- ~~尚未啟動過完整應用程式~~ → **已於 Phase 5 開工時解決**：用 Docker 起了本機開發用 PostgreSQL 容器（`find-restaurants-postgres`，對外埠 **5433**，見下方），`spring-boot:run` 成功連線並套用 Flyway migration（`Successfully applied 2 migrations...now at version v2`），9 張資料表 + `public_tags` 種子資料皆確認正確建立
+- **埠號重要提醒**：本機 5432 埠已被一個既有的原生 PostgreSQL 服務（非本專案、非 Docker）佔用，因此這個專案的 Docker 容器改用 **5433** 對外埠，避免衝突；`application.properties` 的 `DB_URL` 預設值已對應改成 `jdbc:postgresql://localhost:5433/find_restaurants`
+- 目前機器上 8080 埠也有其他服務占用，`spring-boot:run` 啟動網頁伺服器那一步會失敗（跟資料庫/Flyway 無關），Phase 5 實際開發時再處理（例如開發期間改用其他 port，或找出並確認 8080 佔用的服務是否可與本專案共存）
 - 這台機器沒有系統層級安裝 JDK/Maven 在 PATH 上，目前是借用 IntelliJ 內建下載的 `C:\Users\jessemeng\.jdks\ms-21.0.8`。若要用命令列（非 IntelliJ）開發，建議之後設定 `JAVA_HOME` 環境變數指向此路徑，或請 IntelliJ 直接開啟 `backend/pom.xml` 讓 IDE 自行管理
 
 ## 2. 版控清單（僅列清單，不自動執行）
