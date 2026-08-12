@@ -3,3 +3,5 @@
 /workspace.xml
 # Environment-dependent path to Maven home directory
 /mavenHomeManager.xml
+# Claude Code IDE 外掛的個人 session 狀態，非專案設定
+/claudeCodeTabState.xml
